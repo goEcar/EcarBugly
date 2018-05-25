@@ -5,7 +5,6 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.tencent.bugly.Bugly;
-import com.tencent.bugly.beta.Beta;
 import com.tencent.bugly.crashreport.CrashReport;
 
 /*************************************
@@ -36,14 +35,8 @@ public class BuglyUtil {
         if (isNeedTinker) {
             // you must install multiDex whatever tinker is installed!
             MultiDex.install(app);
-            // 安装tinker
-            Beta.installTinker();
         }
-        Bugly.setIsDevelopmentDevice(app,isTest);  //设置是否为开发机型
-        Bugly.init(app, appid, isTest);
-
         CrashReport.initCrashReport(app, appid, isTest);
-
         setVersion(app, version); //版本号--用于异常捕获
     }
 

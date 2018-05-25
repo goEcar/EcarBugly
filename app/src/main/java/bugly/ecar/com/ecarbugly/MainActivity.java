@@ -1,7 +1,7 @@
 package bugly.ecar.com.ecarbugly;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 
@@ -14,10 +14,10 @@ public class MainActivity extends AppCompatActivity {
 //        error();
         fixed();
     }
+
     // 错误
     private void error() {
         Toast.makeText(this, "修复成功".getBytes()[100], Toast.LENGTH_SHORT).show();
-
     }
 
     //修复
