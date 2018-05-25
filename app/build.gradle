@@ -1,16 +1,15 @@
 apply plugin: 'com.android.application'
 
-
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 27
+
     defaultConfig {
         applicationId "bugly.ecar.com.ecarbugly"
         minSdkVersion 14
-        targetSdkVersion 25
+        targetSdkVersion 27
         versionCode 3
         versionName "1.2"
-        buildConfigField "String", "buglyId", '"c32b92f67e"'
+        buildConfigField "String", "buglyId", '"c659a455f4"'
 
         ndk {
             abiFilters "armeabi"
@@ -51,13 +50,15 @@ android {
 
         }
     }
+
+    flavorDimensions "default"
     productFlavors {
 
         pacakge1 {
             applicationIdSuffix ".p1"
             versionCode 1
             versionName '1.1.1.1'
-            buildConfigField "String", "buglyId", '"c32b92f67e"'
+            buildConfigField "String", "buglyId", '"c659a455f4"'
             signingConfig signingConfigs.debug
 
 
@@ -67,7 +68,7 @@ android {
             applicationIdSuffix ".p2"
             versionCode 1
             versionName '3.3.3.3'
-            buildConfigField "String", "buglyId", '"c32b92f67e"'
+            buildConfigField "String", "buglyId", '"c659a455f4"'
             signingConfig signingConfigs.release
 
         }
@@ -78,9 +79,9 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':ecarbuglylib')
-    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
 }
 
 
 // 依赖插件脚本
-apply from: 'tinker-support.gradle'
+//apply from: 'tinker-support.gradle'
